@@ -6,7 +6,7 @@ import configparser as cfg
 class telegram_chatbot():
 
     def __init__(self):
-        self.token = "5553460170:AAEOT9t0sDiEsLWzYCbXTUA8wiyHtp7aLJ8"
+        self.token = "5553460170:AAFRrHjmiMMQA-zeHmZrybHmwq31Pqvr5ZQ"
         self.base = "https://api.telegram.org/bot{}/".format(self.token)
 
     def get_updates(self, offset=None):

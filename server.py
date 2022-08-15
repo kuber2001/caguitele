@@ -2,14 +2,13 @@ from unittest.mock import sentinel
 from bot import telegram_chatbot
 # import gizoogle
 import configparse as cfg
-
 import random
 import json
 
 import torch 
 
 from model import NeuralNet
-from nltk_utils import bag_of_words, tokenize
+from nltk_utils import bag_of_words, tokeniz
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 with open('intents.json', 'r') as json_data:
@@ -43,7 +42,7 @@ def maker(mess):
       reply = "yes wait we are ordering !"
       # break
       return reply
-    sentence = tokenize(sentence)
+    sentence = tokeniz(sentence)
     X = bag_of_words(sentence, all_words)
     X = X.reshape(1, X.shape[0])
     X = torch.from_numpy(X).to(device)
